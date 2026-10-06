@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raul Xavier — Web3 · AI · Alpha · Experiments</title>
+    <meta name="description" content="Raul Xavier — early NFTs, Web3 alpha, AI experiments and things I’m building on the internet" />
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Raul Xavier — Web3 · AI · Alpha · Experiments" />
+    <meta property="og:description" content="Raul Xavier — early NFTs, Web3 alpha, AI experiments and things I’m building on the internet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://x.com/0xRaulXavier" />
+
+    <!-- Twitter / X Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@0xRaulXavier" />
+    <meta name="twitter:creator" content="@0xRaulXavier" />
+    <meta name="twitter:title" content="Raul Xavier — Web3 · AI · Alpha · Experiments" />
+    <meta name="twitter:description" content="Raul Xavier — early NFTs, Web3 alpha, AI experiments and things I’m building on the internet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Guard against third-party browser extension injection collisions (Keplr, Zerion, Taho, etc.) -->
+    <script>
+      (function() {
+        var isExtensionError = function(e) {
+          var msg = (e && (e.message || e.reason || (typeof e === 'string' ? e : ''))) + '';
+          var filename = (e && e.filename) || '';
+          var stack = (e && e.error && e.error.stack) || '';
+          return (
+            filename.indexOf('chrome-extension://') !== -1 ||
+            stack.indexOf('chrome-extension://') !== -1 ||
+            msg.indexOf('Keplr') !== -1 ||
+            msg.indexOf('walletRouter') !== -1 ||
+            msg.indexOf('isZerion') !== -1 ||
+            msg.indexOf('Invalid method: ethereum') !== -1 ||
+            msg.indexOf('Invalid method: starknet') !== -1
+          );
+        };
+
+        window.addEventListener('error', function(event) {
+          if (isExtensionError(event)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isExtensionError(event)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body class="bg-[#080808] text-[#F5F5F5] antialiased selection:bg-white/20 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

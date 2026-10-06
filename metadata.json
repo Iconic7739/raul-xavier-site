@@ -1,0 +1,6 @@
+{
+  "name": "Raul Xavier — Web3 & AI Identity",
+  "description": "Minimal, high-end personal website for Raul Xavier: early NFTs, alpha, Web3, AI, and experiments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

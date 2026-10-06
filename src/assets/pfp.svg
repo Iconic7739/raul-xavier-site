@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <clipPath id="leftKiwiClip">
+      <ellipse cx="445" cy="900" rx="42" ry="38" transform="rotate(-15 445 900)" />
+    </clipPath>
+    <clipPath id="rightKiwiClip">
+      <ellipse cx="545" cy="898" rx="44" ry="40" transform="rotate(15 545 898)" />
+    </clipPath>
+    <clipPath id="mouthClip">
+      <path d="M 355 675 Q 480 690 625 650 Q 560 755 510 758 Q 420 750 355 675 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#ECC875" />
+
+  <!-- Back hair (behind ears and neck) -->
+  <!-- Left pigtail -->
+  <path d="M 270 670 C 240 680 185 730 195 820 C 205 885 245 915 280 905 C 315 895 345 830 348 765 C 350 710 325 670 270 670 Z" 
+        fill="#FF5BB2" stroke="#111111" stroke-width="16" stroke-linejoin="round" />
+  <!-- Left pigtail inner strand lines -->
+  <path d="M 235 830 C 230 870 250 895 270 895" fill="none" stroke="#111111" stroke-width="14" stroke-linecap="round" />
+  <path d="M 285 790 C 290 840 310 880 320 885" fill="none" stroke="#111111" stroke-width="14" stroke-linecap="round" />
+
+  <!-- Right pigtail -->
+  <path d="M 750 675 C 780 685 835 735 825 825 C 815 890 775 920 740 910 C 705 900 675 835 672 770 C 670 715 695 675 750 675 Z" 
+        fill="#FF5BB2" stroke="#111111" stroke-width="16" stroke-linejoin="round" />
+  <!-- Right pigtail inner strand lines -->
+  <path d="M 785 835 C 790 875 770 900 750 900" fill="none" stroke="#111111" stroke-width="14" stroke-linecap="round" />
+  <path d="M 735 795 C 730 845 710 885 700 890" fill="none" stroke="#111111" stroke-width="14" stroke-linecap="round" />
+
+  <!-- Neck and Torso -->
+  <path d="M 458 755 L 458 830 C 420 850 395 910 385 1024 L 620 1024 C 610 910 585 850 546 830 L 546 755 Z" 
+        fill="#B86D84" stroke="#111111" stroke-width="16" stroke-linejoin="round" />
+
+  <!-- Ears -->
+  <!-- Left Ear -->
+  <ellipse cx="270" cy="635" rx="36" ry="42" fill="#B86D84" stroke="#111111" stroke-width="16" />
+  <path d="M 268 620 C 255 635 260 655 272 655" fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Right Ear -->
+  <ellipse cx="735" cy="640" rx="36" ry="42" fill="#B86D84" stroke="#111111" stroke-width="16" />
+  <path d="M 737 625 C 750 640 745 660 733 660" fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Head / Face -->
+  <path d="M 285 580 C 265 670 330 780 500 780 C 670 780 740 670 720 580 C 705 450 630 380 500 380 C 370 380 295 450 285 580 Z" 
+        fill="#B86D84" stroke="#111111" stroke-width="16" stroke-linejoin="round" />
+
+  <!-- Main Hair Cap -->
+  <path d="M 260 550 C 260 410 360 340 500 340 C 640 340 745 410 745 550 C 745 585 735 605 710 605 C 690 605 675 580 650 540 C 610 470 540 460 500 460 C 460 460 395 470 355 540 C 330 580 315 605 295 605 C 270 605 260 585 260 550 Z" 
+        fill="#FF5BB2" stroke="#111111" stroke-width="16" stroke-linejoin="round" />
+
+  <!-- Top tuft of hair -->
+  <path d="M 495 355 C 500 320 475 305 440 325 C 470 340 485 350 495 355 Z" 
+        fill="#111111" stroke="#111111" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Bangs details / separation lines on forehead -->
+  <path d="M 425 435 L 440 540" stroke="#111111" stroke-width="16" stroke-linecap="round" />
+  <path d="M 465 430 L 470 545" stroke="#111111" stroke-width="16" stroke-linecap="round" />
+  <path d="M 505 430 L 495 545" stroke="#111111" stroke-width="16" stroke-linecap="round" />
+  <path d="M 545 435 L 535 540" stroke="#111111" stroke-width="16" stroke-linecap="round" />
+  <!-- Side hair ticks -->
+  <path d="M 280 500 C 275 520 270 550 265 570" fill="none" stroke="#111111" stroke-width="16" stroke-linecap="round" />
+  <path d="M 725 500 C 730 520 735 550 740 570" fill="none" stroke="#111111" stroke-width="16" stroke-linecap="round" />
+
+  <!-- Eyebrows -->
+  <path d="M 370 515 Q 405 505 440 518" fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" />
+  <path d="M 565 518 Q 600 505 635 515" fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Eyes -->
+  <!-- Left Eye -->
+  <ellipse cx="410" cy="595" rx="46" ry="50" fill="#FFFFFF" stroke="#111111" stroke-width="15" />
+  <ellipse cx="420" cy="595" rx="26" ry="30" fill="#111111" />
+  <circle cx="430" cy="585" r="9" fill="#FFFFFF" />
+
+  <!-- Right Eye -->
+  <ellipse cx="590" cy="595" rx="46" ry="50" fill="#FFFFFF" stroke="#111111" stroke-width="15" />
+  <ellipse cx="580" cy="595" rx="26" ry="30" fill="#111111" />
+  <circle cx="590" cy="585" r="9" fill="#FFFFFF" />
+
+  <!-- Mouth -->
+  <!-- Outer Mouth with Tongue and Teeth -->
+  <path d="M 355 675 Q 480 690 625 650 Q 560 755 510 758 Q 420 750 355 675 Z" 
+        fill="#671725" stroke="#111111" stroke-width="16" stroke-linejoin="round" />
+  <!-- Upper Teeth inside mouth -->
+  <path d="M 365 677 Q 480 690 615 655 L 605 670 Q 480 705 380 688 Z" fill="#FFFFFF" />
+  <!-- Tongue inside mouth -->
+  <path d="M 500 720 Q 535 710 560 722 Q 530 755 500 755 Z" fill="#FF95B0" />
+
+  <!-- Kiwi Halves on Torso -->
+  <!-- Left Kiwi Brown Peel Base -->
+  <ellipse cx="452" cy="915" rx="44" ry="40" fill="#8C532E" stroke="#111111" stroke-width="12" />
+  <!-- Left Kiwi Green Flesh -->
+  <ellipse cx="445" cy="900" rx="42" ry="36" transform="rotate(-15 445 900)" fill="#78BD3D" stroke="#111111" stroke-width="10" />
+  <!-- Left Kiwi Center Cream -->
+  <ellipse cx="445" cy="900" rx="14" ry="11" transform="rotate(-15 445 900)" fill="#F2F8DA" />
+  <!-- Left Kiwi Seeds (radiating black dots) -->
+  <circle cx="430" cy="892" r="2.5" fill="#111111" />
+  <circle cx="436" cy="885" r="2.5" fill="#111111" />
+  <circle cx="446" cy="882" r="2.5" fill="#111111" />
+  <circle cx="456" cy="884" r="2.5" fill="#111111" />
+  <circle cx="463" cy="892" r="2.5" fill="#111111" />
+  <circle cx="463" cy="906" r="2.5" fill="#111111" />
+  <circle cx="456" cy="915" r="2.5" fill="#111111" />
+  <circle cx="444" cy="918" r="2.5" fill="#111111" />
+  <circle cx="433" cy="915" r="2.5" fill="#111111" />
+  <circle cx="427" cy="905" r="2.5" fill="#111111" />
+
+  <!-- Right Kiwi Brown Peel Base -->
+  <ellipse cx="542" cy="915" rx="44" ry="40" fill="#8C532E" stroke="#111111" stroke-width="12" />
+  <!-- Right Kiwi Green Flesh -->
+  <ellipse cx="548" cy="900" rx="42" ry="36" transform="rotate(15 548 900)" fill="#78BD3D" stroke="#111111" stroke-width="10" />
+  <!-- Right Kiwi Center Cream -->
+  <ellipse cx="548" cy="900" rx="14" ry="11" transform="rotate(15 548 900)" fill="#F2F8DA" />
+  <!-- Right Kiwi Seeds -->
+  <circle cx="533" cy="892" r="2.5" fill="#111111" />
+  <circle cx="539" cy="885" r="2.5" fill="#111111" />
+  <circle cx="549" cy="882" r="2.5" fill="#111111" />
+  <circle cx="559" cy="884" r="2.5" fill="#111111" />
+  <circle cx="566" cy="892" r="2.5" fill="#111111" />
+  <circle cx="566" cy="906" r="2.5" fill="#111111" />
+  <circle cx="559" cy="915" r="2.5" fill="#111111" />
+  <circle cx="547" cy="918" r="2.5" fill="#111111" />
+  <circle cx="536" cy="915" r="2.5" fill="#111111" />
+  <circle cx="530" cy="905" r="2.5" fill="#111111" />
+</svg>
