@@ -3,6 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Shield against third-party Web3 extension collisions (Keplr, Zerion, Taho) -->
+    <script>
+      (function() {
+        var isExtensionNoise = function(val) {
+          if (!val) return false;
+          var text = '';
+          try {
+            if (typeof val === 'string') {
+              text = val;
+            } else if (val.message || val.stack) {
+              text = (val.message || '') + ' ' + (val.stack || '');
+            } else {
+              text = String(val);
+            }
+          } catch (e) {
+            text = '';
+          }
+          return (
+            text.indexOf('Keplr') !== -1 ||
+            text.indexOf('gt-window-provider') !== -1 ||
+            text.indexOf('chrome-extension://') !== -1 ||
+            text.indexOf('walletRouter') !== -1 ||
+            text.indexOf('isZerion') !== -1 ||
+            text.indexOf('Invalid method: ethereum') !== -1 ||
+            text.indexOf('Invalid method: starknet') !== -1
+          );
+        };
+
+        // Filter extension noise from console.error
+        var originalConsoleError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          for (var i = 0; i < args.length; i++) {
+            if (isExtensionNoise(args[i])) return;
+          }
+          return originalConsoleError.apply(console, arguments);
+        };
+
+        // Filter extension noise from console.warn
+        var originalConsoleWarn = console.warn;
+        console.warn = function() {
+          var args = Array.prototype.slice.call(arguments);
+          for (var i = 0; i < args.length; i++) {
+            if (isExtensionNoise(args[i])) return;
+          }
+          return originalConsoleWarn.apply(console, arguments);
+        };
+
+        // Suppress unhandled extension window errors
+        window.addEventListener('error', function(event) {
+          if (
+            isExtensionNoise(event.message) ||
+            isExtensionNoise(event.filename) ||
+            isExtensionNoise(event.error)
+          ) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+
+        // Suppress unhandled extension promise rejections
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isExtensionNoise(event.reason)) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+
     <title>Raul Xavier — Web3 · AI · Alpha · Experiments</title>
     <meta name="description" content="Raul Xavier — early NFTs, Web3 alpha, AI experiments and things I’m building on the internet" />
     
@@ -22,46 +95,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-    <!-- Guard against third-party browser extension injection collisions (Keplr, Zerion, Taho, etc.) -->
-    <script>
-      (function() {
-        var isExtensionError = function(e) {
-          var msg = (e && (e.message || e.reason || (typeof e === 'string' ? e : ''))) + '';
-          var filename = (e && e.filename) || '';
-          var stack = (e && e.error && e.error.stack) || '';
-          return (
-            filename.indexOf('chrome-extension://') !== -1 ||
-            stack.indexOf('chrome-extension://') !== -1 ||
-            msg.indexOf('Keplr') !== -1 ||
-            msg.indexOf('walletRouter') !== -1 ||
-            msg.indexOf('isZerion') !== -1 ||
-            msg.indexOf('Invalid method: ethereum') !== -1 ||
-            msg.indexOf('Invalid method: starknet') !== -1
-          );
-        };
-
-        window.addEventListener('error', function(event) {
-          if (isExtensionError(event)) {
-            event.stopImmediatePropagation();
-            event.preventDefault();
-            return true;
-          }
-        }, true);
-
-        window.addEventListener('unhandledrejection', function(event) {
-          if (isExtensionError(event)) {
-            event.stopImmediatePropagation();
-            event.preventDefault();
-            return true;
-          }
-        }, true);
-      })();
-    </script>
   </head>
   <body class="bg-[#080808] text-[#F5F5F5] antialiased selection:bg-white/20 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
